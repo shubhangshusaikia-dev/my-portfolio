@@ -1,3 +1,4 @@
+
 import { ArrowUpRight, Github } from "lucide-react";
 
 const GITHUB_URL = "https://github.com/shubhangshusaikia-dev";
@@ -5,6 +6,25 @@ const GITHUB_URL = "https://github.com/shubhangshusaikia-dev";
 const projects = [
   {
     number: "01",
+    title: "IntelliBelt",
+    problem: "Intelligent conveyor belt health monitoring",
+    recognition: "Top 3 — SIH 2026 Internal Round | JEC",
+    description:
+      "An AI-driven multimodal monitoring system proposed for detecting conveyor belt damage and joint rupture in the iron ore mining industry. The project combines camera-based inspection with vibration, acoustic, temperature, current and speed sensing. Hardware prototyping and AI-based sensor fusion are under development.",
+    technologies: [
+      "ESP32",
+      "OV7670 Camera",
+      "MPU6500",
+      "MAX9814",
+      "ACS712",
+      "NTC Thermistor",
+      "Hall Sensor",
+      "HC-SR04",
+      "AI / ML",
+    ],
+  },
+  {
+    number: "02",
     title: "GNCAS Android Application",
     problem: "Bird awareness & community participation",
     description:
@@ -17,7 +37,7 @@ const projects = [
     ],
   },
   {
-    number: "02",
+    number: "03",
     title: "BloomBasket",
     problem: "Modern e-commerce experience",
     description:
@@ -30,7 +50,7 @@ const projects = [
     ],
   },
   {
-    number: "03",
+    number: "04",
     title: "Line Following Robot",
     problem: "Autonomous path following",
     description:
@@ -43,7 +63,7 @@ const projects = [
     ],
   },
   {
-    number: "04",
+    number: "05",
     title: "Obstacle Avoiding Robot",
     problem: "Autonomous obstacle detection",
     description:
@@ -56,7 +76,7 @@ const projects = [
     ],
   },
   {
-    number: "05",
+    number: "06",
     title: "LPG Gas Leakage Detection System",
     problem: "Gas leakage safety",
     description:
@@ -85,7 +105,10 @@ function Projects() {
 
         <div className="projects-list">
           {projects.map((project) => (
-            <article className="project-item" key={project.number}>
+            <article
+              className="project-item"
+              key={project.number}
+            >
               <div className="project-top">
                 <span className="project-number">
                   {project.number}
@@ -100,16 +123,24 @@ function Projects() {
                 <div className="project-description">
                   <h3>{project.title}</h3>
 
+                  {project.recognition && (
+                    <span className="project-recognition">
+                      {project.recognition}
+                    </span>
+                  )}
+
                   <p>{project.description}</p>
                 </div>
 
                 <div className="project-details">
                   <div className="project-technologies">
-                    {project.technologies.map((technology) => (
-                      <span key={technology}>
-                        {technology}
-                      </span>
-                    ))}
+                    {project.technologies.map(
+                      (technology) => (
+                        <span key={technology}>
+                          {technology}
+                        </span>
+                      )
+                    )}
                   </div>
 
                   <div className="project-actions">
@@ -118,8 +149,12 @@ function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="project-link"
+                      aria-label={`View ${project.title} on GitHub`}
                     >
-                      <Github size={14} aria-hidden="true" />
+                      <Github
+                        size={14}
+                        aria-hidden="true"
+                      />
                       GitHub
                       <ArrowUpRight
                         size={13}

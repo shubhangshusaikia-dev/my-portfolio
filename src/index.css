@@ -837,6 +837,19 @@ a {
   letter-spacing: -0.7px;
 }
 
+.project-recognition {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 6px 9px;
+  border: 1px solid #44443e;
+  color: #c6c6b9;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+}
+
+
 .project-description p {
   max-width: 600px;
 
